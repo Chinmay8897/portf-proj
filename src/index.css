@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark-themed Portfolio Design System for K. Aditya Sai Chinmay */
+
+@layer base {
+  :root {
+    /* Dark theme colors based on portfolio requirements */
+    --background: 210 15% 8%;
+    --foreground: 160 30% 85%;
+    
+    --card: 210 15% 10%;
+    --card-foreground: 160 30% 85%;
+    
+    --popover: 210 15% 12%;
+    --popover-foreground: 160 30% 85%;
+    
+    /* Primary: Teal (#124170 adapted for dark) */
+    --primary: 200 65% 25%;
+    --primary-foreground: 160 30% 95%;
+    
+    /* Secondary: Darker teal (#26667F adapted) */
+    --secondary: 190 45% 20%;
+    --secondary-foreground: 160 30% 90%;
+    
+    /* Accent: Green (#67C090 adapted) */
+    --accent: 150 40% 55%;
+    --accent-foreground: 210 15% 8%;
+    
+    --muted: 210 15% 15%;
+    --muted-foreground: 160 15% 60%;
+    
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 160 30% 95%;
+    
+    --border: 210 15% 20%;
+    --input: 210 15% 15%;
+    --ring: 150 40% 55%;
+    
+    --radius: 0.75rem;
+    
+    /* Custom portfolio colors */
+    --portfolio-bg: 210 15% 8%;
+    --portfolio-surface: 210 15% 12%;
+    --portfolio-surface-hover: 210 15% 16%;
+    --portfolio-accent: 150 40% 55%;
+    --portfolio-accent-hover: 150 45% 60%;
+    --portfolio-text: 160 30% 85%;
+    --portfolio-text-muted: 160 15% 60%;
+    
+    /* Hover bubble effect */
+    --bubble-size: 200px;
+    --bubble-opacity: 0.1;
+    
+    /* Animation variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+    background-color: hsl(var(--portfolio-bg));
+    color: hsl(var(--portfolio-text));
+    overflow-x: hidden;
+  }
+  
+  /* Mouse hover background effect */
+  .hover-bg-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hover-bg-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--bubble-size);
+    height: var(--bubble-size);
+    background: radial-gradient(circle, hsl(var(--portfolio-accent) / var(--bubble-opacity)) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    z-index: 0;
+  }
+  
+  .hover-bg-effect:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@layer components {
+  /* Button variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary/90 hover:scale-105 hover:shadow-lg hover:shadow-primary/25;
+  }
+  
+  .btn-secondary {
+    @apply border border-accent text-accent px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-accent hover:text-accent-foreground hover:scale-105;
+  }
+  
+  .btn-ghost {
+    @apply text-muted-foreground px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:text-accent hover:bg-accent/10;
+  }
+  
+  /* Card styles */
+  .card-portfolio {
+    @apply bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10 hover:-translate-y-1;
+  }
+  
+  /* Skill badges */
+  .skill-badge {
+    @apply bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium border border-accent/20 transition-all duration-300 hover:bg-accent/20 hover:scale-105;
+  }
+  
+  /* Section headers */
+  .section-header {
+    @apply text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent;
+  }
+  
+  /* Animated underline */
+  .animated-underline {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  
+  /* Glass effect */
+  .glass-effect {
+    @apply bg-card/50 backdrop-blur-sm border border-border/50;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
