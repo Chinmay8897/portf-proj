@@ -34,8 +34,8 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <span className="text-2xl">👋</span>
-              <span>Hello, I'm</span>
+              <span className="text-2xl"></span>
+              <span>Hello, I am</span>
             </motion.div>
 
             {/* Name */}
@@ -70,7 +70,7 @@ export const Hero = () => {
               transition={{ delay: 0.8 }}
             >
               Passionate about building innovative web applications using modern
-              technologies. Currently pursuing CSE (Data Science) and exploring
+              technologies. Currently pursuing Computer Science and Engineering and exploring
               the intersection of development and data-driven solutions.
             </motion.p>
 
