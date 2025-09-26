@@ -8,53 +8,58 @@
 
 @layer base {
   :root {
-    /* Dark theme colors based on portfolio requirements */
-    --background: 210 15% 8%;
-    --foreground: 160 30% 85%;
-    
-    --card: 210 15% 10%;
-    --card-foreground: 160 30% 85%;
-    
-    --popover: 210 15% 12%;
-    --popover-foreground: 160 30% 85%;
-    
-    /* Primary: Teal (#124170 adapted for dark) */
-    --primary: 200 65% 25%;
-    --primary-foreground: 160 30% 95%;
-    
-    /* Secondary: Darker teal (#26667F adapted) */
-    --secondary: 190 45% 20%;
-    --secondary-foreground: 160 30% 90%;
-    
-    /* Accent: Green (#67C090 adapted) */
-    --accent: 150 40% 55%;
-    --accent-foreground: 210 15% 8%;
-    
-    --muted: 210 15% 15%;
-    --muted-foreground: 160 15% 60%;
-    
+    /* New custom color scheme */
+    /* #000B58 - Deep Navy Blue (Background) */
+    /* #003161 - Medium Navy Blue (Cards/Surfaces) */
+    /* #006A67 - Teal Green (Primary/Accent) */
+    /* #FFF4B7 - Light Cream (Text/Foreground) */
+
+    --background: 233 100% 17%; /* #000B58 */
+    --foreground: 53 82% 85%; /* #FFF4B7 */
+
+    --card: 212 100% 19%; /* #003161 */
+    --card-foreground: 53 82% 85%; /* #FFF4B7 */
+
+    --popover: 212 100% 19%; /* #003161 */
+    --popover-foreground: 53 82% 85%; /* #FFF4B7 */
+
+    /* Primary: Teal Green (#006A67) */
+    --primary: 178 100% 20%; /* #006A67 */
+    --primary-foreground: 53 82% 85%; /* #FFF4B7 */
+
+    /* Secondary: Medium Navy Blue (#003161) */
+    --secondary: 212 100% 19%; /* #003161 */
+    --secondary-foreground: 53 82% 85%; /* #FFF4B7 */
+
+    /* Accent: Teal Green (#006A67) */
+    --accent: 178 100% 20%; /* #006A67 */
+    --accent-foreground: 233 100% 17%; /* #000B58 */
+
+    --muted: 212 100% 15%; /* Darker version of #003161 */
+    --muted-foreground: 53 40% 70%; /* Muted version of #FFF4B7 */
+
     --destructive: 0 65% 50%;
-    --destructive-foreground: 160 30% 95%;
-    
-    --border: 210 15% 20%;
-    --input: 210 15% 15%;
-    --ring: 150 40% 55%;
-    
+    --destructive-foreground: 53 82% 85%;
+
+    --border: 212 100% 25%; /* Lighter version of #003161 */
+    --input: 212 100% 15%; /* Darker version of #003161 */
+    --ring: 178 100% 20%; /* #006A67 */
+
     --radius: 0.75rem;
-    
+
     /* Custom portfolio colors */
-    --portfolio-bg: 210 15% 8%;
-    --portfolio-surface: 210 15% 12%;
-    --portfolio-surface-hover: 210 15% 16%;
-    --portfolio-accent: 150 40% 55%;
-    --portfolio-accent-hover: 150 45% 60%;
-    --portfolio-text: 160 30% 85%;
-    --portfolio-text-muted: 160 15% 60%;
-    
+    --portfolio-bg: 233 100% 17%; /* #000B58 */
+    --portfolio-surface: 212 100% 19%; /* #003161 */
+    --portfolio-surface-hover: 212 100% 25%; /* Lighter #003161 */
+    --portfolio-accent: 178 100% 20%; /* #006A67 */
+    --portfolio-accent-hover: 178 100% 25%; /* Lighter #006A67 */
+    --portfolio-text: 53 82% 85%; /* #FFF4B7 */
+    --portfolio-text-muted: 53 40% 70%; /* Muted #FFF4B7 */
+
     /* Hover bubble effect */
     --bubble-size: 200px;
-    --bubble-opacity: 0.1;
-    
+    --bubble-opacity: 0.15;
+
     /* Animation variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -65,24 +70,31 @@
   * {
     @apply border-border;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
     @apply bg-background text-foreground font-mono;
-    background-color: hsl(var(--portfolio-bg));
+    /* Enhanced background with subtle gradient and texture */
+    background:
+      radial-gradient(circle at 20% 80%, hsl(var(--portfolio-accent) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--secondary) / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, hsl(var(--primary) / 0.08) 0%, transparent 50%),
+      linear-gradient(135deg, hsl(var(--portfolio-bg)) 0%, hsl(var(--muted) / 0.8) 100%);
+    background-attachment: fixed;
     color: hsl(var(--portfolio-text));
     overflow-x: hidden;
+    min-height: 100vh;
   }
-  
+
   /* Mouse hover background effect */
   .hover-bg-effect {
     position: relative;
     overflow: hidden;
   }
-  
+
   .hover-bg-effect::before {
     content: '';
     position: absolute;
@@ -97,7 +109,7 @@
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     z-index: 0;
   }
-  
+
   .hover-bg-effect:hover::before {
     transform: translate(-50%, -50%) scale(1);
   }
@@ -108,38 +120,63 @@
   .btn-primary {
     @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary/90 hover:scale-105 hover:shadow-lg hover:shadow-primary/25;
   }
-  
+
   .btn-secondary {
     @apply border border-accent text-accent px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-accent hover:text-accent-foreground hover:scale-105;
   }
-  
+
   .btn-ghost {
     @apply text-muted-foreground px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:text-accent hover:bg-accent/10;
   }
-  
+
   /* Card styles */
   .card-portfolio {
     @apply bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10 hover:-translate-y-1;
   }
-  
+
   /* Skill badges */
   .skill-badge {
-    @apply bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium border border-accent/20 transition-all duration-300 hover:bg-accent/20 hover:scale-105;
+    @apply bg-accent/10 text-foreground px-3 py-1 rounded-full text-sm font-medium border border-accent/20 transition-all duration-300 hover:bg-accent/20 hover:text-accent hover:scale-105;
   }
-  
+
   /* Section headers */
   .section-header {
     @apply text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent;
   }
-  
+
   /* Animated underline */
   .animated-underline {
     @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
-  
+
   /* Glass effect */
   .glass-effect {
     @apply bg-card/50 backdrop-blur-sm border border-border/50;
+  }
+
+  /* Enhanced background with animated floating elements */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background-image:
+      radial-gradient(circle at 25% 25%, hsl(var(--portfolio-accent) / 0.05) 0%, transparent 25%),
+      radial-gradient(circle at 75% 75%, hsl(var(--primary) / 0.05) 0%, transparent 25%);
+    animation: float 20s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(1deg);
+    }
   }
 }
 

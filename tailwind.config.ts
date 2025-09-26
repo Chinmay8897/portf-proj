@@ -60,6 +60,11 @@ export default {
           text: "hsl(var(--portfolio-text))",
           "text-muted": "hsl(var(--portfolio-text-muted))",
         },
+        // Custom color scheme (hex values for reference)
+        "navy-dark": "#000B58",      // Deep Navy Blue - Background
+        "navy-medium": "#003161",    // Medium Navy Blue - Cards/Surfaces
+        "teal-primary": "#006A67",   // Teal Green - Primary/Accent
+        "cream-light": "#FFF4B7",    // Light Cream - Text/Foreground
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -102,11 +107,11 @@ export default {
           "50%": { transform: "translateY(-10px)" }
         },
         "pulse-glow": {
-          "0%, 100%": { 
+          "0%, 100%": {
             transform: "scale(1)",
             boxShadow: "0 0 0 0 hsl(var(--portfolio-accent) / 0.7)"
           },
-          "70%": { 
+          "70%": {
             transform: "scale(1.02)",
             boxShadow: "0 0 0 10px hsl(var(--portfolio-accent) / 0)"
           }

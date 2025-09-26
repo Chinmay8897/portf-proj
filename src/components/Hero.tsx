@@ -155,18 +155,108 @@ export const Hero = () => {
 
               {/* Profile Image */}
               <motion.div
-                className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-accent/30 shadow-2xl"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden border-4 border-accent/30 shadow-2xl"
+                initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.6,
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 20
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  rotate: 2,
+                  boxShadow: "0 25px 50px -12px rgba(0, 106, 103, 0.25)"
+                }}
+                whileTap={{ scale: 0.95 }}
               >
-                <img
+                <motion.img
                   src="https://images.unsplash.com/photo-1758168698363-3109a8d4da39?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mnx8fGVufDB8fHx8fA%3D%3D"
                   alt="K. Aditya Sai Chinmay"
                   className="w-full h-full object-cover"
+                  initial={{ scale: 1.2 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 1, delay: 0.8 }}
+                  whileHover={{ scale: 1.1 }}
+                />
+
+                {/* Image overlay effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent opacity-0"
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+
+                {/* Hover border glow effect */}
+                <motion.div
+                  className="absolute -inset-1 bg-gradient-to-r from-accent via-primary to-accent rounded-full opacity-0 blur-sm"
+                  whileHover={{ opacity: 0.6 }}
+                  transition={{ duration: 0.4 }}
                 />
               </motion.div>
 
               {/* Floating Elements */}
+              <motion.div
+                className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-accent to-primary rounded-full shadow-lg"
+                animate={{
+                  y: [0, -10, 0],
+                  rotate: [0, 180, 360],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                whileHover={{ scale: 1.2, rotate: 45 }}
+              />
+
+              <motion.div
+                className="absolute -bottom-6 -left-6 w-6 h-6 bg-gradient-to-r from-primary to-secondary rounded-full shadow-md"
+                animate={{
+                  x: [0, 8, 0],
+                  y: [0, -5, 0],
+                  rotate: [0, -180, -360],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1
+                }}
+                whileHover={{ scale: 1.3, y: -10 }}
+              />
+
+              <motion.div
+                className="absolute top-1/4 -left-8 w-4 h-4 bg-accent/60 rounded-full blur-sm"
+                animate={{
+                  scale: [1, 1.5, 1],
+                  opacity: [0.6, 1, 0.6],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 2
+                }}
+                whileHover={{ scale: 2, opacity: 1 }}
+              />
+
+              <motion.div
+                className="absolute bottom-1/3 -right-6 w-5 h-5 bg-primary/50 rounded-full blur-sm"
+                animate={{
+                  scale: [1, 1.3, 1],
+                  opacity: [0.5, 0.8, 0.5],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5
+                }}
+                whileHover={{ scale: 1.8, opacity: 1 }}
+              />
             </div>
           </motion.div>
         </div>

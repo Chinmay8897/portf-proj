@@ -10,8 +10,8 @@ export const BuyMeCoffee = () => {
   const [isQROpen, setIsQROpen] = useState(false);
   const [copiedUPI, setCopiedUPI] = useState(false);
 
-  // Sample UPI ID - replace with actual one
-  const upiId = "adityasaichinmay@paytm";
+  // UPI ID from the QR code
+  const upiId = "adityasaichinmay@okaxis";
 
   const copyUPIId = () => {
     navigator.clipboard.writeText(upiId);
@@ -24,10 +24,8 @@ export const BuyMeCoffee = () => {
   };
 
   const coffeeOptions = [
-    { emoji: '☕', label: 'Coffee', amount: '₹50', message: 'Thanks for the coffee!' },
-    { emoji: '🍕', label: 'Pizza Slice', amount: '₹150', message: 'Pizza fuel for coding!' },
-    { emoji: '🍜', label: 'Meal', amount: '₹300', message: 'Proper meal support!' },
-    { emoji: '💝', label: 'Custom', amount: 'Any Amount', message: 'Your choice!' }
+    { emoji: '☕', label: 'Coffee', amount: '₹150', message: 'Thanks for the coffee support!' },
+    { emoji: '�', label: 'Custom Amount', amount: 'Any Amount', message: 'Thank you for your generous support!' }
   ];
 
   return (
@@ -64,14 +62,14 @@ export const BuyMeCoffee = () => {
               </motion.div>
             </div>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              If you enjoyed my work or found my projects helpful, consider supporting me! 
+              If you enjoyed my work or found my projects helpful, consider supporting me!
               Your contribution helps me continue creating awesome open-source projects and learning new technologies.
             </p>
           </motion.div>
 
           {/* Coffee Options */}
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8"
+            className="flex justify-center items-center gap-6 mb-8 flex-wrap"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -89,7 +87,17 @@ export const BuyMeCoffee = () => {
                 transition={{ delay: 0.5 + index * 0.1 }}
                 onClick={() => setIsQROpen(true)}
               >
-                <div className="text-3xl mb-2">{option.emoji}</div>
+                <div className="text-3xl mb-2">
+                  {option.label === 'Custom Amount' ? (
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/128/1052/1052866.png"
+                      alt="Cash icon"
+                      className="w-8 h-8 mx-auto"
+                    />
+                  ) : (
+                    option.emoji
+                  )}
+                </div>
                 <h4 className="font-medium text-foreground mb-1">{option.label}</h4>
                 <p className="text-accent font-semibold">{option.amount}</p>
               </motion.div>
@@ -126,14 +134,24 @@ export const BuyMeCoffee = () => {
                   </DialogTitle>
                 </DialogHeader>
                 <div className="space-y-6 py-4">
-                  {/* QR Code Placeholder */}
-                  <div className="bg-white p-4 rounded-xl mx-auto w-fit">
-                    <div className="w-48 h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center">
-                      <div className="text-center">
-                        <QrCode size={48} className="text-gray-400 mx-auto mb-2" />
-                        <p className="text-gray-500 text-sm">QR Code</p>
-                        <p className="text-gray-400 text-xs">Scan to Pay</p>
+                  {/* QR Code */}
+                  <div className="bg-white p-6 rounded-xl mx-auto w-fit shadow-lg">
+                    <div className="w-64 h-64 bg-white rounded-lg flex items-center justify-center relative">
+                      <img
+                        src="https://images.unsplash.com/photo-1758882996566-0da67e35a029?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8fA%3D%3D"
+                        alt="UPI QR Code for Aditya Sai Chinmay"
+                        className="w-full h-full object-contain rounded-lg"
+                      />
+                      {/* Small logo overlay */}
+                      <div className="absolute bottom-2 right-2 bg-white rounded-full p-1 shadow-sm">
+                        <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center">
+                          <span className="text-white text-xs font-bold">₹</span>
+                        </div>
                       </div>
+                    </div>
+                    <div className="text-center mt-3">
+                      <p className="text-gray-700 font-semibold">Aditya Sai Chinmay</p>
+                      <p className="text-gray-500 text-sm">Scan to pay with any UPI app</p>
                     </div>
                   </div>
 
@@ -157,24 +175,17 @@ export const BuyMeCoffee = () => {
                     </div>
                   </div>
 
-                  {/* Thank You Message */}
-                  <div className="text-center p-4 bg-accent/10 border border-accent/20 rounded-lg">
-                    <Heart size={20} className="text-red-400 fill-current mx-auto mb-2" />
-                    <p className="text-muted-foreground text-sm">
-                      Every contribution, no matter how small, means a lot and helps me continue my work. Thank you! 🙏
-                    </p>
-                  </div>
                 </div>
               </DialogContent>
             </Dialog>
 
-            <Button 
+            {/* <Button
               onClick={() => window.open('https://github.com/sponsors/Chinmay8897', '_blank')}
               className="btn-secondary hover-effect"
             >
               <Heart size={18} className="mr-2" />
               GitHub Sponsors
-            </Button>
+            </Button> */}
           </motion.div>
 
           {/* Fun Stats */}
@@ -185,11 +196,7 @@ export const BuyMeCoffee = () => {
             viewport={{ once: true }}
             transition={{ delay: 1 }}
           >
-            <p className="text-muted-foreground text-sm">
-              ☕ Coffees consumed while coding: <span className="text-accent font-semibold">∞</span> • 
-              💻 Projects built with caffeine: <span className="text-accent font-semibold">Many</span> • 
-              ❤️ Appreciation received: <span className="text-accent font-semibold">Priceless</span>
-            </p>
+
           </motion.div>
         </motion.div>
       </div>

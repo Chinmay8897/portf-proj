@@ -1,22 +1,22 @@
-# Welcome to your Lovable project
+# K. Aditya Sai Chinmay - Portfolio
 
-## Project info
+## Project Info
 
-**URL**: https://lovable.dev/projects/03d0b5ac-2c2d-4734-8a6e-15e7605845d9
+**Portfolio URL**: https://chinmay-portfolio.vercel.app
 
-## How can I edit this code?
+A modern, responsive portfolio website showcasing my skills, projects, and experience as a Full-Stack Developer.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- 🎨 Modern UI with Framer Motion animations
+- 📱 Fully responsive design
+- 🌙 Dark theme
+- 📧 Contact form with email integration
+- 🚀 Built with React, TypeScript, and Tailwind CSS
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/03d0b5ac-2c2d-4734-8a6e-15e7605845d9) and start prompting.
+## How to Edit
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+You can clone this repository and make changes locally using your preferred IDE.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -60,14 +60,17 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/03d0b5ac-2c2d-4734-8a6e-15e7605845d9) and click on Share -> Publish.
+This project can be deployed to:
+- Vercel (recommended)
+- Netlify
+- GitHub Pages
+- Any static hosting service
 
-## Can I connect a custom domain to my Lovable project?
+## Contact
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+For any questions or collaborations, feel free to reach out:
+- Email: adityasaichinmay@gmail.com
+- LinkedIn: [aditya-sai-chinmay](https://www.linkedin.com/in/aditya-sai-chinmay/)
+- GitHub: [Chinmay8897](https://github.com/Chinmay8897)

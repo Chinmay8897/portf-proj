@@ -243,7 +243,7 @@ export const Contact = () => {
 
           {/* Contact Form */}
           <motion.div
-            className="card-portfolio"
+            className="bg-card border border-border rounded-xl pt-6 px-6 pb-0 transition-all duration-300 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10 hover:-translate-y-1"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -251,67 +251,69 @@ export const Contact = () => {
           >
             <h3 className="text-2xl font-bold text-foreground mb-6">Send a Message</h3>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name and Email */}
-              <div className="grid md:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit}>
+              <div className="space-y-6 mb-6">
+                {/* Name and Email */}
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="name" className="text-foreground font-medium">
+                      Your Name *
+                    </Label>
+                    <Input
+                      id="name"
+                      placeholder="Enter your full name"
+                      value={formData.name}
+                      onChange={(e) => handleChange('name', e.target.value)}
+                      required
+                      className="hover-effect"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-foreground font-medium">
+                      Email Address *
+                    </Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Enter your email"
+                      value={formData.email}
+                      onChange={(e) => handleChange('email', e.target.value)}
+                      required
+                      className="hover-effect"
+                    />
+                  </div>
+                </div>
+
+                {/* Subject */}
                 <div className="space-y-2">
-                  <Label htmlFor="name" className="text-foreground font-medium">
-                    Your Name *
+                  <Label htmlFor="subject" className="text-foreground font-medium">
+                    Subject *
                   </Label>
                   <Input
-                    id="name"
-                    placeholder="Enter your full name"
-                    value={formData.name}
-                    onChange={(e) => handleChange('name', e.target.value)}
+                    id="subject"
+                    placeholder="What's this about?"
+                    value={formData.subject}
+                    onChange={(e) => handleChange('subject', e.target.value)}
                     required
                     className="hover-effect"
                   />
                 </div>
+
+                {/* Message */}
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-foreground font-medium">
-                    Email Address *
+                  <Label htmlFor="message" className="text-foreground font-medium">
+                    Your Message *
                   </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="Enter your email"
-                    value={formData.email}
-                    onChange={(e) => handleChange('email', e.target.value)}
+                  <Textarea
+                    id="message"
+                    placeholder="Tell me about your project or just say hello!"
+                    value={formData.message}
+                    onChange={(e) => handleChange('message', e.target.value)}
                     required
-                    className="hover-effect"
+                    rows={5}
+                    className="hover-effect resize-none"
                   />
                 </div>
-              </div>
-
-              {/* Subject */}
-              <div className="space-y-2">
-                <Label htmlFor="subject" className="text-foreground font-medium">
-                  Subject *
-                </Label>
-                <Input
-                  id="subject"
-                  placeholder="What's this about?"
-                  value={formData.subject}
-                  onChange={(e) => handleChange('subject', e.target.value)}
-                  required
-                  className="hover-effect"
-                />
-              </div>
-
-              {/* Message */}
-              <div className="space-y-2">
-                <Label htmlFor="message" className="text-foreground font-medium">
-                  Your Message *
-                </Label>
-                <Textarea
-                  id="message"
-                  placeholder="Tell me about your project or just say hello!"
-                  value={formData.message}
-                  onChange={(e) => handleChange('message', e.target.value)}
-                  required
-                  rows={5}
-                  className="hover-effect resize-none"
-                />
               </div>
 
               {/* Submit Button */}

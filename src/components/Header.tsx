@@ -31,6 +31,10 @@ export const Header = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMobileMenuOpen(false);
+    } else {
+      // If element doesn't exist (e.g., on coffee page), navigate to home first
+      navigate('/' + href);
+      setIsMobileMenuOpen(false);
     }
   };
 

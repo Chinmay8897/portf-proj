@@ -36,7 +36,7 @@ const skillCategories = [
     icon: Bot,
     title: 'GenAI Tools & Platforms',
     color: 'from-teal-400 to-teal-600',
-    skills: ['Lovable', 'Cursor', 'MidJourney', 'Windsurf', 'Replit', 'GitHub Copilot']
+    skills: ['Cursor', 'MidJourney', 'Windsurf', 'Replit', 'GitHub Copilot', 'Hugging Face']
   }
 ];
 
