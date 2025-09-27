@@ -11,9 +11,11 @@ export const MouseFollower = () => {
     };
 
     const handleMouseEnter = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target && (target.closest('button') || target.closest('a') || target.closest('.hover-effect'))) {
-        setIsHovering(true);
+      const target = e.target;
+      if (target && target instanceof HTMLElement && typeof target.closest === 'function') {
+        if (target.closest('button') || target.closest('a') || target.closest('.hover-effect')) {
+          setIsHovering(true);
+        }
       }
     };
 

@@ -41,17 +41,17 @@ export const Header = () => {
   return (
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-effect shadow-lg' : 'bg-transparent'
+        isScrolled || isMobileMenuOpen ? 'bg-background/95 backdrop-blur-md shadow-lg border-b border-border/20' : 'bg-background/80 backdrop-blur-sm'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto px-4 sm:px-6 py-4">
+        <div className="flex items-center justify-between min-h-[60px]">
           {/* Logo */}
           <motion.div
-            className="text-2xl font-bold"
+            className="text-2xl font-bold flex-shrink-0"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -59,12 +59,12 @@ export const Header = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 flex-1 justify-center">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-accent transition-colors duration-300 font-medium hover-effect"
+                className="text-foreground/90 hover:text-accent transition-colors duration-300 font-medium hover-effect whitespace-nowrap"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -77,7 +77,7 @@ export const Header = () => {
 
           {/* Action Buttons */}
           <motion.div
-            className="hidden lg:flex items-center space-x-3"
+            className="hidden lg:flex items-center space-x-2 xl:space-x-3 flex-shrink-0"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.8 }}
@@ -86,13 +86,14 @@ export const Header = () => {
               onClick={() => navigate('/coffee')}
               variant="ghost"
               size="sm"
-              className="hover:bg-accent/10 hover:text-accent transition-colors"
+              className="hover:bg-accent/10 hover:text-accent transition-colors p-2"
             >
               <Coffee size={18} />
             </Button>
             <Button
               onClick={() => scrollToSection('#contact')}
-              className="btn-primary hover-effect relative overflow-hidden group"
+              className="btn-primary hover-effect relative overflow-hidden group px-4 py-2 text-sm whitespace-nowrap"
+              size="sm"
             >
               <span className="relative z-10">Let's Connect</span>
               <motion.div
@@ -106,7 +107,7 @@ export const Header = () => {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="lg:hidden text-foreground hover:text-accent transition-colors"
+            className="lg:hidden text-foreground hover:text-accent transition-colors p-2 flex-shrink-0"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             whileTap={{ scale: 0.95 }}
           >
@@ -124,12 +125,12 @@ export const Header = () => {
           }}
           transition={{ duration: 0.3 }}
         >
-          <div className="pt-4 pb-2 space-y-2">
+          <div className="pt-4 pb-2 space-y-2 bg-background/98 backdrop-blur-md border-t border-border/20">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-accent hover:bg-accent/10 rounded-lg transition-all"
+                className="block w-full text-left px-4 py-3 text-foreground hover:text-accent hover:bg-accent/20 rounded-lg transition-all font-medium border border-transparent hover:border-accent/30"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{
                   opacity: isMobileMenuOpen ? 1 : 0,
