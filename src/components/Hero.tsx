@@ -94,7 +94,7 @@ export const Hero = () => {
                 </motion.span>
               </Button>
               <Button
-                onClick={() => window.open('https://drive.google.com/file/d/1pZqBelOSM-UVv1cDyu-ypH5EcOR9luf5/view?usp=sharing', '_blank')}
+                onClick={() => window.open('https://drive.google.com/file/d/1O9cq7p7P7ytd5lT8YC-ilDSZPy0R408i/view?usp=sharing', '_blank')}
                 className="btn-secondary hover-effect"
                 size="lg"
               >
