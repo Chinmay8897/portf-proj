@@ -1,0 +1,439 @@
+@import "tailwindcss";
+
+@theme {
+  --color-border: #8abeae50;
+  --color-scanlines: #8abeae05;
+  --color-background: #13171d;
+  --color-shadow: #080e12;
+  --color-foreground: #8abeae;
+  --color-highlight: #83ffc0;
+  --color-muted: #1f282b;
+  --color-nav: #1b2226;
+  --color-glow: #baffea;
+  --color-palette-1: #4eb69c;
+  --color-palette-2: #7bcbc2;
+  --color-palette-3: #338a74;
+  --color-palette-4: #64b4ab;
+  --color-palette-5: #81e7db;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes flip {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(180deg);
+    }
+  }
+
+  @keyframes flip-back {
+    0% {
+      transform: rotateY(180deg);
+    }
+    100% {
+      transform: rotateY(0deg);
+    }
+  }
+
+  @keyframes grain {
+    0% {
+      background-position: 0 0;
+    }
+    25% {
+      background-position: 100px 50px;
+    }
+    50% {
+      background-position: -50px 100px;
+    }
+    75% {
+      background-position: 150px -25px;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(2rem) scale(0.25);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-out {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(2rem) scale(0.25);
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+  }
+
+  /* Glitch animations */
+  @keyframes glitch-red {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-2px);
+    }
+    50% {
+      transform: translateX(2px);
+    }
+    75% {
+      transform: translateX(-1px);
+    }
+  }
+
+  @keyframes glitch-green {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(2px);
+    }
+    50% {
+      transform: translateX(-2px);
+    }
+    75% {
+      transform: translateX(1px);
+    }
+  }
+
+  @keyframes glitch-blue {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-1px);
+    }
+    50% {
+      transform: translateY(1px);
+    }
+    75% {
+      transform: translateY(-0.5px);
+    }
+  }
+
+  @keyframes scan-lines {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(2px);
+    }
+  }
+
+  @keyframes random-scan-lines {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(1px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    75% {
+      transform: translateY(-1px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes glitch-scan-lines {
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 0.7;
+    }
+    10% {
+      transform: translateY(1px);
+      opacity: 0.9;
+    }
+    20% {
+      transform: translateY(-1px);
+      opacity: 0.5;
+    }
+    30% {
+      transform: translateY(0);
+      opacity: 0.7;
+    }
+    40% {
+      transform: translateY(2px);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(-2px);
+      opacity: 0.6;
+    }
+    60% {
+      transform: translateY(0);
+      opacity: 0.7;
+    }
+    70% {
+      transform: translateY(1px);
+      opacity: 0.9;
+    }
+    80% {
+      transform: translateY(-1px);
+      opacity: 0.5;
+    }
+    90% {
+      transform: translateY(0);
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes glitch-blocks {
+    0%,
+    100% {
+      clip-path: inset(0 0 0 0);
+      transform: translateX(0);
+    }
+    25% {
+      clip-path: inset(10% 0 20% 0);
+      transform: translateX(-1px);
+    }
+    50% {
+      clip-path: inset(20% 0 10% 0);
+      transform: translateX(1px);
+    }
+    75% {
+      clip-path: inset(5% 0 15% 0);
+      transform: translateX(-0.5px);
+    }
+  }
+
+  /* CRT Animations */
+  @keyframes crt-flicker {
+    0%,
+    100% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.05;
+    }
+  }
+
+  @keyframes crt-static {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+    25% {
+      transform: translateX(1px) translateY(1px);
+    }
+    50% {
+      transform: translateX(-1px) translateY(-1px);
+    }
+    75% {
+      transform: translateX(0.5px) translateY(-0.5px);
+    }
+  }
+}
+
+@layer utilities {
+  /* WebKit browsers (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar {
+    width: 10px;
+    opacity: 0.5;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-nav);
+    border-radius: 0px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-muted);
+  }
+
+  /* Firefox scrollbar styling - only applies to Firefox */
+  @supports (-moz-appearance: none) {
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-nav) transparent;
+    }
+
+    /* Firefox scrollbar hover effect */
+    *:hover {
+      scrollbar-color: var(--color-muted) transparent;
+    }
+  }
+
+  img {
+    user-select: none;
+  }
+
+  body::before {
+    content: "";
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    background: url("/images/noise.webp") repeat;
+    opacity: 0.45;
+    mix-blend-mode: overlay;
+    animation: grain 0.25s steps(3) infinite;
+    z-index: -9999;
+  }
+
+  ::selection {
+    background-color: var(--color-muted);
+  }
+
+  .scan-lines {
+    background: linear-gradient(
+      180deg,
+      transparent 50%,
+      var(--color-scanlines) 100%
+    );
+    background-size: 100% 4px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .slide-in {
+    animation: slide-in 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .slide-out {
+    animation: slide-out 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .fade-in {
+    animation: fade-in 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .fade-out {
+    animation: fade-out 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    cursor:
+      url("data:image/svg+xml,%3Csvg width='15' height='23' viewBox='0 0 15 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.7263 19.665C11.9567 20.2158 11.7353 22.3016 10.5132 22.7851C9.29116 23.2686 7.72979 22.7851 7.72979 22.7851L4.89659 17.1434L0 22.0187V0L15 14.9346H9.41131C9.68559 15.4582 11.4335 18.9653 11.7263 19.665Z' fill='%238abeae'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1.31415 3.15881V18.8598L5.2566 14.9346L8.54198 21.4767C8.54198 21.4767 9.43075 21.759 9.85613 21.4767C10.2815 21.1943 10.7046 20.6257 10.5132 20.1683C9.6095 18.0088 7.22783 13.6262 7.22783 13.6262H11.8274L1.31415 3.15881Z' fill='%238abeae'/%3E%3C/svg%3E"),
+      auto;
+  }
+  body {
+    @apply bg-background text-foreground;
+    transition: all 0.3s ease-in-out;
+  }
+  body[data-scroll-locked] {
+    margin-right: 0 !important;
+  }
+  /* Hide page scrollbar (keep scroll functionality) */
+  html,
+  body {
+    -ms-overflow-style: none; /* IE 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    width: 0px; /* Safari and Chrome */
+    height: 0px;
+  }
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 2px 2px var(--color-highlight);
+  border-radius: 1.25rem;
+}
+
+.animate-flip {
+  animation: flip 0.7s ease-in-out forwards;
+}
+
+.animate-flip-back {
+  animation: flip-back 0.7s ease-in-out forwards;
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.TooltipContent[data-state="closed"] {
+  animation-name: slide-out;
+}
+
+.DialogContent[data-state="closed"] {
+  animation-name: fade-out;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-nav);
+  border-radius: 0px;
+  overflow: hidden;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  overflow: hidden;
+}

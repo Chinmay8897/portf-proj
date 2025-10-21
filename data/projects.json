@@ -1,0 +1,131 @@
+[
+    {
+        "title": "Eyewitness",
+        "description": "A crime reporting and community safety platform with real-time incident tracking.",
+        "longDescription": "Eyewitness is a comprehensive crime reporting platform that allows users to document, track and share crime incidents in their communities. It features secure user authentication, rich content creation with media uploads, crime categorization, real-time dashboard and community engagement tools for enhanced public safety awareness.",
+        "thumbnail": "Eyewitness",
+        "technologies": [
+            "React",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "JWT",
+            "TinyMCE",
+            "Multer",
+            "CSS3",
+            "Bootstrap"
+        ],
+        "githubLink": "https://github.com/Chinmay8897/BlogWeb",
+        "websiteLink": "https://eyewitness-five.vercel.app/",
+        "type": "personal"
+    },
+    {
+        "title": "ParkEase",
+        "description": "An intelligent parking reservation system with real-time availability tracking.",
+        "longDescription": "Advanced Parking Booking is a smart parking management system that allows users to book parking spots in advance. It features real-time availability tracking, payment integration, QR code generation, location-based search, and automated booking management.",
+        "thumbnail": "ParkingBooking",
+        "technologies": [
+            "React",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Stripe",
+            "Google Maps API",
+            "QR Code"
+        ],
+        "githubLink": "https://github.com/Chinmay8897/advanced-parking-booking",
+        "websiteLink": "https://advanced-parking-booking.vercel.app/",
+        "type": "personal"
+    },
+    {
+        "title": "SimplHome",
+        "description": "A AI-powered smart home management and E-commerce application.",
+        "longDescription": "SimplHome is an advanced AI-powered customer service agent for Cymbal Home and Garden, a home improvement and gardening retailer, designed to deliver personalized, multi-modal customer experiences through conversational AI.",
+        "thumbnail": "SimplHome",
+        "technologies": [
+            "React",
+            "Node.js",
+            "IoT",
+            "WebSocket",
+            "Supabase",
+            "Express"
+        ],
+        "githubLink": "https://github.com/theabhishekar/simplhome",
+        "websiteLink": "https://simplhome.vercel.app/",
+        "type": "personal"
+    },
+    {
+        "title": "GNSS GenAI Predictor",
+        "description": "AI-powered GNSS signal prediction and analysis system using multiple ML models.",
+        "longDescription": "GNSS GenAI Predictor leverages artificial intelligence and machine learning to predict and analyze GNSS (Global Navigation Satellite System) signals. The system provides accurate predictions for signal quality, satellite positioning, and atmospheric effects on navigation accuracy.",
+        "thumbnail": "GNSSPredictor",
+        "technologies": [
+            "Python",
+            "TensorFlow",
+            "Scikit-learn",
+            "LSTM",
+            "Gaussian Processes",
+            "GANs",
+            "Transformers"
+        ],
+        "githubLink": "https://github.com/Chinmay8897/gnss-genai-predictor",
+        "websiteLink": "https://gnss-genai-predictor-7nxp.vercel.app/",
+        "type": "personal"
+    },
+    {
+        "title": "Bhasha",
+        "description": "Linguistic Heritage Preservation Platform for digitizing India's cultural texts and narratives.",
+        "longDescription": "Bhasha is a full-stack web application for preserving and digitizing India's linguistic heritage through collaborative contribution of traditional texts, proverbs, and folk narratives. Built for the OpenAI Academy x NxtWave Buildathon, it features real-time collaboration, AI-powered text processing with Google Gemini API, and modern reactive architecture using Convex backend-as-a-service for seamless data synchronization.",
+        "thumbnail": "Bhasha",
+        "technologies": [
+            "React 19",
+            "Vite",
+            "TypeScript",
+            "Convex",
+            "Convex Auth",
+            "Google Gemini API",
+            "Tailwind CSS",
+            "Shadcn UI",
+            "Framer Motion"
+        ],
+        "githubLink": "https://github.com/Chinmay8897/buildathon-five",
+        "websiteLink": "https://buildathon-five.vercel.app/",
+        "type": "personal"
+    },
+    {
+        "title": "Task Manager App",
+        "description": "A productivity-focused task management application with collaboration features.",
+        "longDescription": "Task Manager App is a comprehensive productivity tool that helps individuals and teams organize, track, and complete tasks efficiently. Features include project organization, deadline management, team collaboration, progress tracking, and notification systems.",
+        "thumbnail": "TaskManager",
+        "technologies": [
+            "React",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Socket.io",
+            "JWT",
+            "Material-UI"
+        ],
+        "githubLink": "https://github.com/Chinmay8897/task-manager-app",
+        "websiteLink": "https://task-manager-app-ruddy-zeta.vercel.app/",
+        "type": "personal"
+    },
+    {
+        "title": "Notes SaaS App",
+        "description": "A cloud-based note-taking and knowledge management SaaS platform. (Under Development)",
+        "longDescription": "Notes SaaS App is a comprehensive cloud-based note-taking platform that offers advanced features like real-time collaboration, rich text editing, file attachments, search functionality, and workspace organization. Built as a Software-as-a-Service solution with subscription management.",
+        "thumbnail": "NotesSaaS",
+        "technologies": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Prisma",
+            "PostgreSQL",
+            "Stripe",
+            "Clerk",
+            "TailwindCSS"
+        ],
+        "githubLink": "https://github.com/Chinmay8897/notes-saas-app",
+        "type": "personal"
+    }
+]
