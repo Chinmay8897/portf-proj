@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description:
       "Web Portfolio of K Aditya Sai Chinmay. Full-stack Software Developer specializing in Web and Mobile Development.",
     type: "website",
-    // url: "https://quinchy.dev",
+    url: "https://adityasaichinmay.vercel.app/",
   },
 };
 
