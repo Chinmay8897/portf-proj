@@ -37,10 +37,10 @@ export default function About() {
               <div className="flex min-w-[10.75rem] flex-col items-start gap-1 select-none md:items-start lg:min-w-[20rem] lg:gap-4">
                 <h1
                   lang="en"
-                  aria-label="kwinch"
+                  aria-label="aditya"
                   className="text-highlight text-shadow-highlight flex text-[3rem] leading-none font-semibold tracking-[-0.08em] text-shadow-lg/25 md:text-[4.5rem]"
                 >
-                  qu<p className="tracking-[-0.55rem]">i</p>nch
+                  aditya
                 </h1>
                 <p className="ml-1 text-[1rem] tracking-tighter opacity-90 md:text-[1.40rem] lg:ml-2">
                   Software Developer
