@@ -34,6 +34,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+    <meta name="google-site-verification" content="ocjUTPpKsGg0ENYp3u2e-cdsUtv5rvAHyT88DGCLC4I" />
       {/* 1. Hero Section */}
       <FadeInSection className="flex items-center gap-5 md:items-start">
         <div className="flex flex-col items-center gap-10 lg:items-start">
